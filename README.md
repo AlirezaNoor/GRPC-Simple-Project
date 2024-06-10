@@ -85,3 +85,77 @@ message HelloReply {
 service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
+```
+
+## Implementing the Service
+
+The GreeterService.cs file in the Services folder implements the gRPC service:
+
+
+
+``` public class GreeterService : Greeter.GreeterBase
+{
+    private readonly ILogger<GreeterService> _logger;
+    public GreeterService(ILogger<GreeterService> logger)
+    {
+        _logger = logger;
+    }
+
+    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+    {
+        return Task.FromResult(new HelloReply
+        {
+            Message = "Hello " + request.Name
+        });
+    }
+}
+```
+
+## Writing the Client
+
+A simple gRPC client can be written to test the service. In a new console project, install the necessary packages and use the following code:
+
+
+```  using System;
+using System.Threading.Tasks;
+using Grpc.Net.Client;
+using GrpcGreeter;
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+        var client = new Greeter.GreeterClient(channel);
+        var reply = await client.SayHelloAsync(new HelloRequest { Name = "World" });
+        Console.WriteLine("Greeting: " + reply.Message);
+    }
+}
+
+```
+
+
+
+
+## Testing the Service
+
+
+Start the gRPC server by running the GrpcGreeter project.
+Run the client to send a request to the server and receive a response.
+
+
+## Contributing
+
+
+Contributions are welcome! Please fork this repository and submit a pull request for any improvements.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+این فایل README شامل تمام اطلاعات مورد نیاز برای شروع کار با پروژه gRPC در ASP.NET Core است و به کاربران کمک می‌کند تا به راحتی پروژه را نصب، اجرا و تست کنند.
+
+
+ 
+
