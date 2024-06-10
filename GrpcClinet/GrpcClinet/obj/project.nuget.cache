@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "6whmUJ9uR2Qeb37RYlCSBOAoPhEvrqUmTVzchUh3tyOajRKYHYddbPrWFtAtxRrH0Hg9ehyx6Odb3kup3817AA==",
+  "success": true,
+  "projectFilePath": "/home/alireza/RiderProjects/GrpcClinet/GrpcClinet/GrpcClinet.csproj",
+  "expectedPackageFiles": [
+    "/home/alireza/.nuget/packages/google.protobuf/3.15.8/google.protobuf.3.15.8.nupkg.sha512",
+    "/home/alireza/.nuget/packages/grpc.core.api/2.42.0/grpc.core.api.2.42.0.nupkg.sha512",
+    "/home/alireza/.nuget/packages/grpc.net.client/2.42.0/grpc.net.client.2.42.0.nupkg.sha512",
+    "/home/alireza/.nuget/packages/grpc.net.common/2.42.0/grpc.net.common.2.42.0.nupkg.sha512",
+    "/home/alireza/.nuget/packages/grpc.tools/2.41.1/grpc.tools.2.41.1.nupkg.sha512",
+    "/home/alireza/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.3/microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "/home/alireza/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
+    "/home/alireza/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.2/system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "GrpcClinet depends on Grpc.Net.Client (>= 2.41.1) but Grpc.Net.Client 2.41.1 was not found. An approximate best match of Grpc.Net.Client 2.42.0 was resolved.",
+      "libraryId": "Grpc.Net.Client",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
+}
